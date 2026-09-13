@@ -1,0 +1,292 @@
+:root {
+    /* Paleta Crimson Noir */
+    --bg-main: #0D0D0D;
+    --bg-card: #161616;
+    --border-color: #2A2A2A;
+    --accent-red: #FF1744;
+    --accent-hover: #D50000;
+    --text-primary: #F5F5F7;
+    --text-muted: #8E8E93;
+
+    /* Tipografia */
+    --font-display: 'Cinzel', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Granulação sutil em degradê escuro */
+    background-image: radial-gradient(circle at 50% -20%, rgba(255, 23, 68, 0.08) 0%, transparent 50%);
+}
+
+/* Tipografia Utilitária */
+.font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.05em;
+}
+
+.brand-logo {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    letter-spacing: 0.15em;
+}
+
+.text-accent {
+    color: var(--accent-red) !important;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+}
+
+/* Header & Navegação */
+.nav-blur {
+    background-color: rgba(13, 13, 13, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 1000;
+}
+
+.border-bottom-subtle {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.border-top-subtle {
+    border-top: 1px solid var(--border-color);
+}
+
+.nav-link-custom {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.nav-link-custom:hover {
+    color: var(--accent-red);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 75vh;
+    padding: 8rem 0 4rem;
+}
+
+.tagline {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent-red);
+    font-weight: 600;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+}
+
+.hero-lead {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    max-width: 580px;
+}
+
+/* Botões */
+.btn-accent {
+    background-color: var(--accent-red);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    transition: background-color 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+}
+
+.btn-accent:hover {
+    background-color: var(--accent-hover);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(255, 23, 68, 0.4);
+}
+
+.btn-ghost {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.btn-ghost:hover {
+    border-color: var(--accent-red);
+    color: var(--accent-red);
+}
+
+/* Cards & Superfícies */
+.dark-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark-card:hover {
+    border-color: rgba(255, 23, 68, 0.4);
+}
+
+.spotify-quote {
+    background-color: rgba(22, 22, 22, 0.6);
+    border-left: 2px solid var(--accent-red);
+}
+
+.audio-stat {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(42, 42, 42, 0.5);
+    padding-bottom: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.stat-label {
+    color: var(--text-muted);
+}
+
+.stat-value {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Pilares */
+.pilar-card {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.pilar-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-red);
+}
+
+.pilar-num {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--accent-red);
+    font-weight: 700;
+}
+
+/* Cards de Artistas */
+.artist-img-wrapper {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+}
+
+.artist-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(80%) contrast(110%);
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.artist-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--bg-card) 5%, transparent 95%);
+}
+
+.artist-card:hover .artist-img {
+    filter: grayscale(0%) contrast(100%);
+    transform: scale(1.04);
+}
+
+.artist-card:hover {
+    border-color: var(--accent-red);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Player & Waveform */
+.badge-accent {
+    background-color: rgba(255, 23, 68, 0.15);
+    color: var(--accent-red);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    padding: 0.4rem 0.75rem;
+    border-radius: 4px;
+}
+
+.waveform {
+    height: 48px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0 1rem;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.wave-bar {
+    flex: 1;
+    background-color: var(--border-color);
+    border-radius: 2px;
+    height: 20%;
+    transition: height 0.2s ease, background-color 0.2s ease;
+}
+
+.wave-bar.active {
+    background-color: var(--accent-red);
+}
+
+.player-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.player-btn:hover {
+    border-color: var(--accent-red);
+    color: var(--accent-red);
+}
+
+.player-btn-main {
+    background: var(--accent-red);
+    border: none;
+    color: #FFFFFF;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 23, 68, 0.35);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.player-btn-main:hover {
+    background: var(--accent-hover);
+    transform: scale(1.06);
+}
